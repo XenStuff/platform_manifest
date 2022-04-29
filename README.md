@@ -9,25 +9,24 @@ To get started with Palladium-OS, you'll need to get familiar with [Repo](https:
 ## To initialize your local repository, run this command:
 
 ```bash
-   repo init -u https://github.com/Palladium-OS/platform_manifest.git -b 12.1
+repo init -u https://github.com/XenStuff/platform_manifest.git -b 12.1
 ```
-
-## Afterwards, sync the source by running this command:
+You can just `repo sync` to sync although you can save space and bandwidth by including additional flags as below
 
 ```bash
-    repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
+repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
 ```
 
 ## Building Palladium OS
-
-In order to build, use this command:
+After sync, prepare your trees and kernel and stuff.
+For starting your build, use this command:
 
 ```bash
-   . build/env*
-   lunch palladium_<devicecodename>-userdebug
-   mka palladium -j$(nproc --all)
+source build/envsetup.sh
+lunch palladium_<devicecodename>-userdebug
+mka palladium -j$(nproc --all)
 ```
-
+ Good luck and happy building!
 ---
 
 # Credits:
